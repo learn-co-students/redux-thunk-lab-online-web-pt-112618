@@ -5,12 +5,11 @@ export const loadingCats = () => {
 }
 
 export const fetchCats = images => {
-    debugger
-const urls = images.map(image => ({url: image.url}))
-    console.log("urls", urls)
+// const urls = images.map(image => ({url: image.url}))
+//     console.log("urls", urls)
     return {
         type: 'FETCH_CATS',
-        pictures: urls
+        payload: images
     }
 }
 
@@ -19,7 +18,8 @@ export const getCats = () => {
         dispatch(loadingCats())
         return fetch('http://localhost:4000/db')
         .then(resp => resp.json())
-        .then(json => dispatch(fetchCats(json.images)))
+        .then(json => { const cats = json.images 
+            dispatch(fetchCats(cats))})
         //.then(json => {debugger})
       }
 }
