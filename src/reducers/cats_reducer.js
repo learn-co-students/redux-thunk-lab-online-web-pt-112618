@@ -7,7 +7,7 @@ export default (state={
         case 'LOADING_CATS':
             return {...state, loading: true}
         case 'FETCH_CATS':
-            return {...state, pictures: action.pictures}
+            return {loading: false, pictures: action.payload}
         default:
             return state
     }
