@@ -17,17 +17,17 @@ const images = [
 	{ url: 'www.example.com/cat2' }
 ];
 
-describe('<App/>', function() {
-	it('should use the componentDidMount lifecycle method to fetchCats', function() {
-		sinon.stub(App.prototype, 'componentDidMount');
+// describe('<App/>', function() {
+// 	it('should use the componentDidMount lifecycle method to fetchCats', function() {
+// 		sinon.stub(App.prototype, 'componentDidMount');
 
-		const store = createStore(catsReducer, applyMiddleware(thunk));
-		const wrapper = mount(
-			<Provider store={store}>
-				<App />
-			</Provider>
-		);
+// 		const store = createStore(catsReducer, applyMiddleware(thunk));
+// 		const wrapper = mount(
+// 			<Provider store={store}>
+// 				<App />
+// 			</Provider>
+// 		);
 
-		expect(App.prototype.componentDidMount.calledOnce).to.eql(true);
-	});
-});
+// 		expect(App.prototype.componentDidMount.calledOnce).to.eql(true);
+// 	});
+// });
